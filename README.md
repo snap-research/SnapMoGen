@@ -8,3 +8,9 @@
   <a href=''>
     <img src='https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=white'></a>
 </p>
+
+
+<video width="640" height="360" controls autoplay loop muted>
+  <source src="https://github.com/snap-research/OmniMotion/blob/main/static/video/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
