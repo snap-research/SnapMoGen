@@ -11,6 +11,6 @@
 
 
 <video width="640" height="360" controls autoplay loop muted>
-  <source src="https://github.com/snap-research/OmniMotion/blob/main/static/video/demo.mp4" type="video/mp4">
+  <source src="./static/video/demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
