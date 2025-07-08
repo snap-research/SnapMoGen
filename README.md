@@ -74,7 +74,7 @@ cp -r ./HumanML3D/ ./data/humanml3d
 cp -r ./OmniMotion ./data/omnimotion
 ```
 
-## :rocket: Play with Pre-trained Model
+## :rocket: Play with MoMask++
 
 ### 2.1 Motion Generation 
 
