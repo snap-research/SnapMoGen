@@ -11,7 +11,8 @@
 
 ![teaser_image](./static/images/result.png)
 
-If you find our code or paper helpful, please consider starring our repository and citing:
+If you find our code or paper helpful, please consider **starring** this repository and citing the following:
+
 ```
 xxx
 ```
@@ -20,24 +21,24 @@ xxx
 
 📢 **2023-11-29** --- Initialized the webpage and git project.
 
-## :round_pushpin: Get You Ready
+## :round_pushpin: Getting Started
 
   
-### 1.1 Conda Environment
+### 1.1 Set Up Conda Environment
   
 ```sh
 conda env create -f environment.yml
 conda activate momask-plus
 ```
 
-#### Alternative: 
-In case you have trouble installing by Conda, you can still install through pip.
+#### 🔁 Alternative: Pip Installation
+If you encounter issues with Conda, you can install the dependencies using pip:
 
 ```sh
 pip install -r requirements.txt
 ```
 
-We tested this with Python 3.8.20.
+✅ Tested on Python 3.8.20.
 
 ### 1.2 Models and Dependencies
 
@@ -47,7 +48,7 @@ bash prepare/download_models.sh
 ```
 
 #### Download Evaluation Models and Gloves
-For evaluation only.
+> (For evaluation only.)
 ```
 bash prepare/download_evaluator.sh
 bash prepare/download_glove.sh
@@ -59,15 +60,15 @@ To address the download error related to gdown: "Cannot retrieve the public link
 #### (Optional) Download Manually
 Visit [[Google Drive]](https://drive.google.com/drive/folders/1sHajltuE2xgHh91H9pFpMAYAkHaX9o57?usp=drive_link) to download the models and evaluators mannually.
 
-### 1.3 Get Data
+### 1.3 Download the Datasets
 
-**HumanML3D** - Follow the instruction in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the dataset to our repository:
+**HumanML3D** - Follow the instruction in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the dataset to this repository:
 
 ```
 cp -r ./HumanML3D/ ./data/humanml3d
 ```
 
-**OmniMotion** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/OmniMotion), then copy the dataset to our repository:
+**OmniMotion** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/OmniMotion), then place it in the following directory:
 
 ```
 cp -r ./OmniMotion ./data/omnimotion
@@ -75,23 +76,22 @@ cp -r ./OmniMotion ./data/omnimotion
 
 ## :rocket: Play with Pre-trained Model
 
-### 2.1 Generation 
+### 2.1 Motion Generation 
 
-If you want to generate motions given your own text, try ``gen_momask_plus.py``:
+To generate motion from your own text prompts, use:
 
 ```
 python gen_momask_plus.py
 ```
-
-Check ``config/eval_momaskplus.yaml`` for inference configration such as ``number of steps`` and ``guidance scale``.
+You can modify the inference configuration (e.g., number of diffusion steps, guidance scale, etc.) in ``config/eval_momaskplus.yaml``.
 
 ### 2.2 Evaluation
 
 Run the following scripts for quantitive evaluation:
 
 ```sh
-python eval_momask_plus_hml.py          # Evaluation on HumanML3D dataset
-python eval_momask_plus.py              # Evaluation on OmniMotion dataset
+python eval_momask_plus_hml.py    # Evaluate on HumanML3D dataset
+python eval_momask_plus.py        # Evaluate on OmniMotion dataset
 ```
 
 ### 2.3 Training
@@ -101,30 +101,44 @@ There are two main components in MoMask++, a multi-scale residual motion VQVAE a
 #### Multi-scale Motion RVQVAE
 
 ```sh
-python train_rvq_hml.py                 # Training multiscale RVQ on HumanML3D dataset.
-python train_rvq.py                     # Training multiscale RVQ on OmniMotion dataset.
+python train_rvq_hml.py           # Train RVQVAE on HumanML3D
+python train_rvq.py               # Train RVQVAE on OmniMotion
 ```
 
-Find the learning configurations in 'config/residual_vqvae_hml.yaml' for HumanML3D and 'config/residual_vqvae.yaml' for OmniMotion.
+Configuration files:
+* ``config/residual_vqvae_hml.yaml`` (for HumanML3D)
+* ``config/residual_vqvae.yaml`` (for OmniMotion)
 
 #### Generative Masked Transformer
 
 ```sh
-python train_momask_plus_hml.py         # Training Transformer on HumanML3D dataset.
-python train_momask_plus.py             # Training Transformer on OmniMotion dataset.
+python train_momask_plus_hml.py   # Train on HumanML3D
+python train_momask_plus.py       # Train on OmniMotion
 ```
 
+Configuration files:
+* ``config/train_momaskplus_hml.yaml`` (for HumanML3D)
+* ``config/train_momaskplus.yaml`` (for OmniMotion)
+  
 #### Global Motion Refinement
 
 We use a separate lightweight root motion regressor to refine the root trajectory. In particular, this regressor is trained given local motion features to predict root linear velocities. During motion generation, we use this regressor to re-predict the resulting root trajectories which effectively reduces sliding feet.
 
 ## :clapper: Visualization
 
-All animations are manually rendered in blender using Bitmoji characters. An example character is provided [Here](xxx). We use this [scene](xxxx) for animation.
+All animations were manually rendered in **Blender** using **Bitmoji** characters.  
+An example character is available [here](xxx), and we use [this Blender scene](xxxx) for animation rendering.
+
+---
 
 ### Retargeting
 
-We recommend rokoko belender [add-on](https://www.rokoko.com/integrations/blender) (v1.4.1) for seamless retargeting. Please note all motions in OmniMotion are T-Posed in rest pose. You can use script ``rest_pose_retarget.py`` for conversion betweening ``T-Pose`` and ``A-Pose`` rest pose.
+We recommend using the [Rokoko Blender add-on](https://www.rokoko.com/integrations/blender) (v1.4.1) for seamless motion retargeting.
+
+> ⚠️ Note: All motions in **OmniMotion** use **T-Pose** as the rest pose.
+
+If your character rig is in **A-Pose**, use the ``rest_pose_retarget.py`` to convert between T-Pose and A-Pose rest poses:
+
 
 ## Acknowlegements
 
