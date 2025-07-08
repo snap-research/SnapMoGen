@@ -148,3 +148,7 @@ We sincerely thank the open-sourcing of these works where our code is based on:
 
 ### Misc
 Contact guochuan5513@gmail.com for further questions.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=snap-research/OmniMotion&type=Date)](https://www.star-history.com/#snap-research/OmniMotion&Date)
