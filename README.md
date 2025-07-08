@@ -5,6 +5,8 @@
     <img src='https://img.shields.io/badge/Arxiv-Pdf-A42C25?style=flat&logo=arXiv&logoColor=white'></a>
   <a href='https://snap-research.github.io/OmniMotion/'>
     <img src='https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=white'></a>
+  <a href='https://huggingface.co/datasets/Ericguo5513/OmniMotion'> 
+    <img src='https://img.shields.io/badge/Dataset-OmniMotion-blue'></a>
 </p>
 
 ![teaser_image](./static/images/result.png)
