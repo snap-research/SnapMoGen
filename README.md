@@ -1,12 +1,12 @@
-# OmniMotion: Human Motion Generation from Expressive Texts
+# SnapMoGen: Human Motion Generation from Expressive Texts
 
 <p align="left">
   <a href=''>
     <img src='https://img.shields.io/badge/Arxiv-Pdf-A42C25?style=flat&logo=arXiv&logoColor=white'></a>
-  <a href='https://snap-research.github.io/OmniMotion/'>
+  <a href='https://snap-research.github.io/SnapMoGen/'>
     <img src='https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=white'></a>
-  <a href='https://huggingface.co/datasets/Ericguo5513/OmniMotion'> 
-    <img src='https://img.shields.io/badge/Dataset-OmniMotion-blue'></a>
+  <a href='https://huggingface.co/datasets/Ericguo5513/SnapMoGen'> 
+    <img src='https://img.shields.io/badge/Dataset-SnapMoGen-blue'></a>
 </p>
 
 ![teaser_image](./static/images/result.png)
@@ -68,10 +68,10 @@ Visit [[Google Drive]](https://drive.google.com/drive/folders/1sHajltuE2xgHh91H9
 cp -r ./HumanML3D/ ./data/humanml3d
 ```
 
-**OmniMotion** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/OmniMotion), then place it in the following directory:
+**SnapMoGen** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/SnapMoGen), then place it in the following directory:
 
 ```
-cp -r ./OmniMotion ./data/omnimotion
+cp -r ./SnapMoGen ./data/SnapMoGen
 ```
 
 ## :rocket: Play with MoMask++
@@ -91,7 +91,7 @@ Run the following scripts for quantitive evaluation:
 
 ```sh
 python eval_momask_plus_hml.py    # Evaluate on HumanML3D dataset
-python eval_momask_plus.py        # Evaluate on OmniMotion dataset
+python eval_momask_plus.py        # Evaluate on SnapMoGen dataset
 ```
 
 ### 2.3 Training
@@ -102,23 +102,23 @@ There are two main components in MoMask++, a multi-scale residual motion VQVAE a
 
 ```sh
 python train_rvq_hml.py           # Train RVQVAE on HumanML3D
-python train_rvq.py               # Train RVQVAE on OmniMotion
+python train_rvq.py               # Train RVQVAE on SnapMoGen
 ```
 
 Configuration files:
 * ``config/residual_vqvae_hml.yaml`` (for HumanML3D)
-* ``config/residual_vqvae.yaml`` (for OmniMotion)
+* ``config/residual_vqvae.yaml`` (for SnapMoGen)
 
 #### Generative Masked Transformer
 
 ```sh
 python train_momask_plus_hml.py   # Train on HumanML3D
-python train_momask_plus.py       # Train on OmniMotion
+python train_momask_plus.py       # Train on SnapMoGen
 ```
 
 Configuration files:
 * ``config/train_momaskplus_hml.yaml`` (for HumanML3D)
-* ``config/train_momaskplus.yaml`` (for OmniMotion)
+* ``config/train_momaskplus.yaml`` (for SnapMoGen)
   
 #### Global Motion Refinement
 
@@ -135,7 +135,7 @@ An example character is available [here](xxx), and we use [this Blender scene](x
 
 We recommend using the [Rokoko Blender add-on](https://www.rokoko.com/integrations/blender) (v1.4.1) for seamless motion retargeting.
 
-> ⚠️ Note: All motions in **OmniMotion** use **T-Pose** as the rest pose.
+> ⚠️ Note: All motions in **SnapMoGen** use **T-Pose** as the rest pose.
 
 If your character rig is in **A-Pose**, use the ``rest_pose_retarget.py`` to convert between T-Pose and A-Pose rest poses:
 
@@ -151,4 +151,4 @@ Contact guochuan5513@gmail.com for further questions.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=snap-research/OmniMotion&type=Date)](https://www.star-history.com/#snap-research/OmniMotion&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=snap-research/SnapMoGen&type=Date)](https://www.star-history.com/#snap-research/SnapMoGen&Date)
