@@ -71,7 +71,7 @@ cp -r ./HumanML3D/ ./data/humanml3d
 **SnapMoGen** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/SnapMoGen), then place it in the following directory:
 
 ```
-cp -r ./SnapMoGen ./data/SnapMoGen
+cp -r ./SnapMoGen ./data/snapmogen
 ```
 
 ## :rocket: Play with MoMask++
