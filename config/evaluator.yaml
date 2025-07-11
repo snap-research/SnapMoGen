@@ -1,0 +1,86 @@
+exp:
+  root_ckpt_dir: './checkpoint_dir'
+  root_log_dir: './log'
+  name: 'evalv2_rec1_cst0.1_ld256'
+  device: 'cuda:1'
+  is_continue: False
+  is_train: True
+  seed: 10306
+
+
+data:
+  name: 'snapmogen'
+  unit_length: 8
+  root_dir: '/mnt/local-disk/SnapMoGen'
+  joint_num: 24
+  dim_pose: 148 #1+2+1+24*6, only use local rotations plus root information
+  fps: 30
+  max_motion_length: 320
+  max_text_length: 120
+  min_motion_length: 120
+
+vae: True
+matching_pool_size: 100
+
+text_embedder:
+  dim_embed: 768
+  version: 'google/t5-v1_1-base'
+
+motion_encoder:
+  latent_dim: 256
+  output_dim: 256
+
+motion_decoder:
+  latent_dim: 256
+
+latent_encoder:
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: 'gelu'
+
+text_encoder:
+  nfeats: 768
+  vae: true
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: 'gelu'
+
+latent_decoder:
+  latent_dim: 256
+  ff_size: 1024
+  num_layers: 6
+  num_heads: 4
+  dropout: 0.1
+  activation: 'gelu'
+
+training:
+  batch_size: 64
+  max_epoch: 100
+  infoNCE_temp: 0.10
+  infoNCE_thre: 0.80
+  lambda_rec: 1
+  lambda_latent_align: 1.0e-5
+  lambda_contrast: 0.1
+  lambda_kl: 1.0e-5
+  lr: 2.0e-4
+  milestones: [30_500]
+  gamma: 0.1
+  warm_up_iter: 200
+  log_every: 10
+  save_latest: 500
+
+
+inference:
+  ext: 'pool_100_nsplit'
+  matching_pool_size: 100
+  name: 'evalv2_rec1_cst0.1_ld256'
+  device: 'cuda:0'
+  repeat_time: 20
+  # model_name: "best"

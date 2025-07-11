@@ -1,0 +1,74 @@
+exp:
+  root_ckpt_dir: './checkpoint_dir'
+  root_log_dir: './log'
+  name: test
+
+
+  device: 'cuda:3'
+  is_continue: False
+  is_train: True
+  seed: 10306
+
+
+data:
+  name: 'snapmogen'
+  unit_length: 4
+  root_dir: '/mnt/local-disk/SnapMoGen'
+  joint_num: 24
+  dim_pose: 296 
+  fps: 30
+  max_motion_length: 320
+  motion_length: 128
+  max_text_length: 120
+  min_motion_length: 128
+
+quantizer:
+  code_dim: 512
+  nb_code: 2048
+  # scales: [8, 4, 2, 1]
+  scales: [2, 1]
+  # scales: [1, 1, 1, 1]
+  # scales: [16, 8, 4, 2, 1] 
+  # scales: [32, 16, 8, 4, 2, 1] 
+  # scales: [32, 20, 16, 10, 8, 6, 4, 3, 2, 1]
+  # scales: [32, 16, 10.6, 8, 5.3, 4, 3, 2, 1.33, 1]
+  quantize_dropout_prob: 0
+  num_quantizers: 4
+  shared_codebook: False
+  share_quant_resi: 4
+  quant_resi: 0
+  start_drop: -1
+  version: 'v2'
+  mu: 0.99
+
+model:
+  down_t: 2
+  stride_t: 2
+  width: 512
+  depth: 3
+  dilation_growth_rate: 3 
+  vq_act: 'relu'
+  use_attn: True
+  vq_norm: None
+
+training:
+  # batch_size: 256
+  # max_epoch: 50
+  batch_size: 256
+  max_epoch: 1000
+  lambda_fk: 0
+  lambda_commit: 0.02
+  lambda_global: 1.5
+  lambda_expicit: 2
+  ema: False
+  weight_decay: 0.0
+  lr: 3.0e-4
+  milestones: [300, 700]
+  gamma: 0.3
+  warm_up_iter: 2000
+  log_every: 10
+  save_latest: 500
+  # eval_every_e: 1
+  eval_every_e: 10
+  recons_loss: 'l1_smooth'
+

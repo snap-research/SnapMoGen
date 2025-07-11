@@ -1,0 +1,42 @@
+root_ckpt_dir: './checkpoint_dir'
+device: 'cuda:0'
+
+seed: 100039
+
+mask_trans_name: momaskplus_hrvq3_nlayer8_cdp0.1_ca_bm
+
+# time_steps: [10, 12, 14, 16, 18]
+time_steps: [16]
+cond_scales: [4]
+# cond_scales: [2, 3, 4, 5, 6, 7]
+temperature: 1
+topkr: 0.9
+force_mask: False
+cal_mm: False
+gsample: True
+which_epoch: net_best_fid.tar
+
+ext: evaluation_res_cs4_ts16
+
+
+matching_pool_size: 100
+repeat_time: 20
+
+
+data:
+  name: 'snapmogen'
+  unit_length: 8
+  root_dir: '/mnt/local-disk/SnapMoGen'
+  joint_num: 24
+  dim_pose: 296 #here we use all features
+  fps: 30
+  max_motion_length: 320
+  motion_length: 128
+  max_text_length: 120
+  min_motion_length: 128
+
+
+
+gen:
+  num_samples: 100
+  animate: True

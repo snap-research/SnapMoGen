@@ -1,0 +1,74 @@
+exp:
+  root_ckpt_dir: './checkpoint_dir'
+  root_log_dir: './log'
+  # name: 'mask_nlayer8_cdp0.1_rvq_nsplit_148'
+  name: 'hml_momaskplus_hrvq5_nlayer8_cdp0.1_ca'
+  device: 'cuda:0'
+  is_continue: False
+  is_train: True
+  seed: 10306
+
+# vq_name: "hml_hrvq_nq4_263_nb1024_fk0_gl0_ex0.5_attn" #vq6
+vq_name: "hml_hrvq_nq4_263_nb512_fk0_gl0_ex0.5_attn" # vq5
+# vq_name: "hml_hrvq_nq2_263_nb512_fk0_gl0_ex0.5_attn" # vq3
+
+# vq_name: 'hml_hrvq_nq4_263_nb2048_fk0_gl0_ex0.5_attn' #vq7
+# vq_name: 'hml_hrvq_nq3_263_nb512_fk0_gl0_ex0.5_attn' #vq4
+# vq_name: 'hml_hrvq_nq5_263_nb512_fk0_gl0_ex0.5_attn' #vq8
+# vq_ckpt: "latest.tar"
+vq_ckpt: "net_best_fid.tar"
+
+
+data:
+  name: 'humanml3d'
+  unit_length: 4
+  root_dir: '/mnt/local-disk/HumanML3D'
+  joint_num: 22
+  dim_pose: 263 #296 #here we use all features
+  fps: 20
+  max_motion_length: 196
+  motion_length: 128
+  max_text_length: 20
+  min_motion_length: 40
+
+
+text_embedder:
+  dim_embed: 768
+  version: 'google/t5-v1_1-base'
+  # dim_embed: 512
+  # version: 'ViT-B/32'
+
+
+
+  # base: ld384, ff1024, nlayer8, nhead6, bs64
+  # medium: ld512, ff2048, nlayer12, nhead8, bs64
+  # large: ld768, ff3072, nlayer12, nhead12, bs32
+model:
+  latent_dim: 384
+  # latent_dim: 512
+  ff_size: 1024
+  # ff_size: 512
+  n_layers: 8
+  n_heads: 6
+  dropout: 0.2
+  # fuse_mode: 'in_context'
+  use_toa_pe: False
+  use_lvl_pe: False
+  fuse_mode: 'cross_attention'
+
+
+training:
+  batch_size: 64
+  max_epoch: 500
+  cond_drop_prob: 0.1
+  weight_decay: 0.0
+  pert_prob: 0.1
+  lr: 2.0e-4
+  milestones: [100_000, 150_000]
+  gamma: 0.3
+  warm_up_iter: 2000
+  log_every: 10
+  save_latest: 500
+  eval_every_e: 1
+  gumbel_sample: True
+

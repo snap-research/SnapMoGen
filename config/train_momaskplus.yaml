@@ -1,0 +1,65 @@
+exp:
+  root_ckpt_dir: './checkpoint_dir'
+  root_log_dir: './log'
+  # name: 'momaskplus_hrvq3_nlayer8_cdp0.1_ca_bm'
+  name: "test"
+  device: 'cuda:2'
+  is_continue: False
+  is_train: True
+  seed: 10306
+
+
+vq_name: 'hrvq_nq2_296_nb2048_fk0_gl1.5_ex2_ema_attn' # vq3
+vq_ckpt: "net_best_mpjpe.tar"
+
+
+data:
+  name: 'snapmogen'
+  unit_length: 8
+  root_dir: '/mnt/local-disk/SnapMoGen'
+  joint_num: 24
+  dim_pose: 296 #here we use all features
+  fps: 30
+  max_motion_length: 320
+  motion_length: 120
+  max_text_length: 120
+  min_motion_length: 128
+
+
+text_embedder:
+  dim_embed: 768
+  version: 'google/t5-v1_1-base'
+  #  For CLIP
+  # dim_embed: 512
+  # version: 'ViT-B/32'
+
+
+  # base: ld384, ff1024, nlayer8, nhead6, bs64
+  # medium: ld512, ff2048, nlayer12, nhead8, bs64
+  # large: ld768, ff3072, nlayer12, nhead12, bs32
+model:
+  latent_dim: 384
+  ff_size: 1024
+  n_layers: 8
+  n_heads: 8
+  dropout: 0.2
+  use_toa_pe: False
+  use_lvl_pe: False
+  fuse_mode: 'cross_attention' # 'cross_attention' or 'in_context'
+
+
+training:
+  batch_size: 64
+  max_epoch: 500
+  cond_drop_prob: 0.1
+  weight_decay: 0.0
+  pert_prob: 0.1
+  lr: 2.0e-4
+  milestones: [100_000, 150_000]
+  gamma: 0.3
+  warm_up_iter: 2000
+  log_every: 10
+  save_latest: 500
+  eval_every_e: 1
+  gumbel_sample: True
+
