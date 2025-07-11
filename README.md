@@ -50,7 +50,7 @@ bash prepare/download_models.sh
 #### Download Evaluation Models and Gloves
 > (For evaluation only.)
 ```
-bash prepare/download_evaluator.sh
+bash prepare/download_evaluators.sh
 bash prepare/download_glove.sh
 ```
 
