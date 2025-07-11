@@ -50,7 +50,7 @@ bash prepare/download_models.sh
 #### Download Evaluation Models and Gloves
 > (For evaluation only.)
 ```
-bash prepare/download_evaluator.sh
+bash prepare/download_evaluators.sh
 bash prepare/download_glove.sh
 ```
 
@@ -58,23 +58,25 @@ bash prepare/download_glove.sh
 To address the download error related to gdown: "Cannot retrieve the public link of the file. You may need to change the permission to 'Anyone with the link', or have had many accesses". A potential solution is to run `pip install --upgrade --no-cache-dir gdown`, as suggested on https://github.com/wkentaro/gdown/issues/43. This should help resolve the issue.
 
 #### (Optional) Download Manually
-Visit [[Google Drive]](https://drive.google.com/drive/folders/1sHajltuE2xgHh91H9pFpMAYAkHaX9o57?usp=drive_link) to download the models and evaluators mannually.
+Visit [[Google Drive]](https://drive.google.com/drive/folders/1qW_VVDbFy9E05U2E_N95zi-tDWrF77zw?usp=drive_link) to download the models and evaluators mannually.
 
 ### 1.3 Download the Datasets
 
-**HumanML3D** - Follow the instruction in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the dataset to this repository:
+**HumanML3D** - Follow the instruction in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.git), then copy the dataset to your data folder:
 
 ```
-cp -r ./HumanML3D/ ./data/humanml3d
+cp -r ./HumanML3D/ your_data_folder/HumanML3D
 ```
 
 **SnapMoGen** - Download the data from [huggingface](https://huggingface.co/datasets/Ericguo5513/SnapMoGen), then place it in the following directory:
 
 ```
-cp -r ./SnapMoGen ./data/snapmogen
+cp -r ./SnapMoGen your_data_folder/SnapMoGen
 ```
 
 ## :rocket: Play with MoMask++
+
+> Remember to update the ``data.root_dir`` in all the ``config/*.yaml`` files -  with your own data directory path.
 
 ### 2.1 Motion Generation 
 
@@ -98,6 +100,8 @@ python eval_momask_plus.py        # Evaluate on SnapMoGen dataset
 
 There are two main components in MoMask++, a multi-scale residual motion VQVAE and a generative masked Transformer.
 
+> All checkpoints will be stored under ``/checkpoint_dir``.
+
 #### Multi-scale Motion RVQVAE
 
 ```sh
@@ -111,6 +115,7 @@ Configuration files:
 
 #### Generative Masked Transformer
 
+
 ```sh
 python train_momask_plus_hml.py   # Train on HumanML3D
 python train_momask_plus.py       # Train on SnapMoGen
@@ -120,6 +125,10 @@ Configuration files:
 * ``config/train_momaskplus_hml.yaml`` (for HumanML3D)
 * ``config/train_momaskplus.yaml`` (for SnapMoGen)
   
+> Remember to change ``vq_name`` and ``vq_ckpt`` to your VQ name and VQ checkpoint in these two configuration files.
+> Training accuracy at around 0.25 is normal.
+
+  
 #### Global Motion Refinement
 
 We use a separate lightweight root motion regressor to refine the root trajectory. In particular, this regressor is trained given local motion features to predict root linear velocities. During motion generation, we use this regressor to re-predict the resulting root trajectories which effectively reduces sliding feet.
@@ -127,7 +136,7 @@ We use a separate lightweight root motion regressor to refine the root trajector
 ## :clapper: Visualization
 
 All animations were manually rendered in **Blender** using **Bitmoji** characters.  
-An example character is available [here](xxx), and we use [this Blender scene](xxxx) for animation rendering.
+An example character is available [here](https://drive.google.com/file/d/1tRZHp0jXdvB3n7LDQPccM1KzwygOJF1x/view?usp=drive_link), and we use [this Blender scene](https://drive.google.com/file/d/16SbrnG9JsJ2w7UwCFmh10PcBdl6HxlrA/view?usp=drive_link) for animation rendering.
 
 ---
 
