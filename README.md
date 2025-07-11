@@ -125,7 +125,8 @@ Configuration files:
 * ``config/train_momaskplus_hml.yaml`` (for HumanML3D)
 * ``config/train_momaskplus.yaml`` (for SnapMoGen)
   
-> Remember to change ``vq_name`` and ``vq_ckpt`` to your VQ name and VQ checkpoint in these two config files.
+> Remember to change ``vq_name`` and ``vq_ckpt`` to your VQ name and VQ checkpoint in these two configuration files.
+> Training accuracy at around 0.25 is normal.
 
   
 #### Global Motion Refinement
