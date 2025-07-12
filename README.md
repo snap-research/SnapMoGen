@@ -9,7 +9,7 @@
     <img src='https://img.shields.io/badge/Dataset-SnapMoGen-blue'></a>
 </p>
 
-![teaser_image](./static/images/result.png)
+![teaser_image](https://github.com/snap-research/SnapMoGen/blob/gh_pages/static/images/result.png)
 
 If you find our code or paper helpful, please consider **starring** this repository and citing the following:
 
