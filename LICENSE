@@ -1,0 +1,168 @@
+Snap Inc. Non-Commercial License
+
+Copyright (c) 2025 Snap Inc. All rights reserved.
+
+The sample code and dataset in this repository are made available by Snap Inc. for non-commercial, research purposes only. 
+
+Non-commercial means not intended for or directed towards commercial advantage or monetary compensation. Research purposes mean solely for academic study, instruction, or non-commercial research, testing or validation. 
+
+No commercial license, whether implied or otherwise, is granted in or to this sample code or any related patents, unless you have entered into a separate agreement with Snap Inc. for such rights.
+
+The sample code and dataset are provided as-is, without warranty of any kind, express or implied, including any warranties of merchantability, title, fitness for a particular purpose, non-infringement, or that the code is free of defects, errors or viruses. In no event will Snap Inc. be liable for any damages or losses of any kind arising from the sample code and dataset or your use thereof.
+
+Any redistribution of this sample code and dataset must retain or reproduce this license text including all copyright notices, conditions and disclaimers. 
+
+Third-Party Software
+
+The sample code may require, link to or interact with the following third-party components, each of which is governed by its own respective license:
+einops 
+
+Copyright 2018-2024 Alexey Bochkovskiy 
+
+The einops project can be found at: https://github.com/arogozhnikov/einops. 
+This software is licensed under the MIT License. A copy of the license can be found at: https://github.com/arogozhnikov/einops/blob/master/LICENSE.
+
+gdown 
+
+Copyright 2024 wkentaro 
+
+The gdown project can be found at: https://github.com/wkentaro/gdown. 
+This software is licensed under the MIT License. A copy of the license can be found at: https://github.com/wkentaro/gdown/blob/main/LICENSE.
+
+google-auth 
+
+Copyright 2014-2024 Google LLC 
+
+The google-auth project can be found at: https://github.com/googleapis/google-auth-python. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/googleapis/google-auth-python/blob/main/LICENSE.
+
+google-auth-oauthlib 
+
+Copyright 2017-2024 Google LLC 
+
+The google-auth-oauthlib project can be found at: https://github.com/googleapis/oauthlib-python.
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/googleapis/oauthlib-python/blob/main/LICENSE.
+
+huggingface-hub 
+
+Copyright 2024 Hugging Face, Inc. 
+
+The huggingface-hub project can be found at: https://github.com/huggingface/huggingface_hub. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/huggingface/huggingface_hub/blob/main/LICENSE.
+
+matplotlib 
+
+Copyright 2012-2024 
+
+John D. Hunter, Michael Droettboom and the Matplotlib development team. 
+
+The matplotlib project can be found at: https://github.com/matplotlib/matplotlib. 
+
+This software is licensed under the PSF License. A copy of the license can be found at: https://github.com/matplotlib/matplotlib/blob/main/LICENSE/LICENSE.
+
+numpy 
+
+Copyright 2008-2024 NumPy Developers. 
+
+The numpy project can be found at: https://github.com/numpy/numpy. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/numpy/numpy/blob/main/LICENSE.txt.
+
+pandas 
+
+Copyright 2008-2024 The Pandas Development Team 
+
+The pandas project can be found at: https://github.com/pandas-dev/pandas. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/pandas-dev/pandas/blob/main/LICENSE.
+
+scipy 
+
+Copyright 2001-2024 SciPy Developers. 
+
+The scipy project can be found at: https://github.com/scipy/scipy. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/scipy/scipy/blob/main/LICENSE.txt.
+
+sentencepiece 
+
+Copyright 2016-2024 Google Inc. 
+
+The sentencepiece project can be found at: https://github.com/google/sentencepiece. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/google/sentencepiece/blob/master/LICENSE.
+
+tensorboard 
+
+Copyright 2017-2024 The TensorFlow Authors. 
+
+The tensorboard project can be found at: https://github.com/tensorflow/tensorboard. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/tensorflow/tensorboard/blob/master/LICENSE.
+
+tokenizers 
+
+Copyright 2024 Hugging Face, Inc. 
+
+The tokenizers project can be found at: https://github.com/huggingface/tokenizers. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/huggingface/tokenizers/blob/main/LICENSE.
+
+torch 
+
+Copyright 2016-2024 Facebook, Inc. 
+
+The torch project can be found at: https://github.com/pytorch/pytorch. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/pytorch/pytorch/blob/main/LICENSE.
+
+torch-summary 
+
+Copyright 2024 Sori Kim 
+
+The torch-summary project can be found at: https://github.com/sksq96/pytorch-summary. 
+
+This software is licensed under the MIT License. A copy of the license can be found at: https://github.com/sksq96/pytorch-summary/blob/master/LICENSE.
+
+torch-tb-profiler 
+
+Copyright 2020-2024 The PyTorch Team 
+
+The torch-tb-profiler project can be found at: https://github.com/pytorch/torch-tb-profiler. 
+
+This software is licensed under the MIT License. A copy of the license can be found at: https://github.com/pytorch/torch-tb-profiler/blob/main/LICENSE.
+
+torchaudio 
+
+Copyright 2016-2024 Facebook, Inc. 
+
+The torchaudio project can be found at: https://github.com/pytorch/audio. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/pytorch/audio/blob/main/LICENSE.
+
+torchvision 
+
+Copyright 2016-2024 Facebook, Inc. 
+
+The torchvision project can be found at: https://github.com/pytorch/vision. 
+
+This software is licensed under the BSD 3-Clause "New" or "Revised" License. A copy of the license can be found at: https://github.com/pytorch/vision/blob/main/LICENSE.
+
+tqdm 
+
+Copyright 2018-2024 tqdm contributors 
+
+The tqdm project can be found at: https://github.com/tqdm/tqdm. 
+
+This software is licensed under the MIT License. A copy of the license can be found at: https://github.com/tqdm/tqdm/blob/master/LICENSE.
+
+transformers 
+
+Copyright 2018-2024 Hugging Face, Inc. 
+
+The transformers project can be found at: https://github.com/huggingface/transformers. 
+
+This software is licensed under the Apache License, Version 2.0. A copy of the license can be found at: https://github.com/huggingface/transformers/blob/main/LICENSE.
