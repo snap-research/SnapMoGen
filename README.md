@@ -14,7 +14,15 @@
 If you find our code or paper helpful, please consider **starring** this repository and citing the following:
 
 ```
-xxx
+@misc{snapmogen2025,
+      title={SnapMoGen: Human Motion Generation from Expressive Texts}, 
+      author={Chuan Guo and Inwoo Hwang and Jian Wang and Bing Zhou},
+      year={2025},
+      eprint={2507.09122},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.09122}, 
+}
 ```
 
 ## :postbox: News
