@@ -1,7 +1,7 @@
 # SnapMoGen: Human Motion Generation from Expressive Texts
 
 <p align="left">
-  <a href=''>
+  <a href='https://www.arxiv.org/abs/2507.09122'>
     <img src='https://img.shields.io/badge/Arxiv-Pdf-A42C25?style=flat&logo=arXiv&logoColor=white'></a>
   <a href='https://snap-research.github.io/SnapMoGen/'>
     <img src='https://img.shields.io/badge/Project-Page-green?style=flat&logo=Google%20chrome&logoColor=white'></a>
