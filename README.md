@@ -144,7 +144,7 @@ We use a separate lightweight root motion regressor to refine the root trajector
 ## :clapper: Visualization
 
 All animations were manually rendered in **Blender** using **Bitmoji** characters.  
-An example character is available [here](https://drive.google.com/file/d/1tRZHp0jXdvB3n7LDQPccM1KzwygOJF1x/view?usp=drive_link), and we use [this Blender scene](https://drive.google.com/file/d/16SbrnG9JsJ2w7UwCFmh10PcBdl6HxlrA/view?usp=drive_link) for animation rendering.
+An example character is available [here](https://drive.google.com/file/d/1VJM1jk4V433yDHarqED9Ll4aNIhgrBBJ/view?usp=drive_link), and we use [this Blender scene](https://drive.google.com/file/d/16SbrnG9JsJ2w7UwCFmh10PcBdl6HxlrA/view?usp=drive_link) for animation rendering.
 
 ---
 
