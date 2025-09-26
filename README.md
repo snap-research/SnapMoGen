@@ -26,8 +26,9 @@ If you find our code or paper helpful, please consider **starring** this reposit
 ```
 
 ## :postbox: News
-
-📢 **2023-11-29** --- Initialized the webpage and git project.
+📢 **2025-09-25** --- SnapMoGen was accepted to NeurIPS 2025.
+📢 **2025-07-29** --- Released code and dataset.
+📢 **2025-07-20** --- Initialized the webpage and git project.
 
 ## :round_pushpin: Getting Started
 
